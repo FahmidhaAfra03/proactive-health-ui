@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
     const service = services.find((s) => s.slug === params.slug);
     if (!service) throw notFound();
-    return { service };
+    return { service } as { service: (typeof services)[number] };
   },
   head: ({ loaderData }) => ({
     meta: [
