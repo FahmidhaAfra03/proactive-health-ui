@@ -41,7 +41,7 @@ function ServiceDetail() {
             <div className="mt-10 rounded-3xl border border-black/5 bg-muted/60 p-6">
               <p className="text-[11px] font-semibold uppercase tracking-widest text-gold-deep">Program includes</p>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {service.benefits.map((b) => (
+                {service.benefits.map((b: string) => (
                   <li key={b} className="flex items-start gap-3">
                     <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-ink">
                       <HiCheck className="h-3.5 w-3.5" />
