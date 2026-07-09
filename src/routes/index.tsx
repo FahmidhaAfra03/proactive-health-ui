@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/SiteLayout";
+import { Hero } from "@/components/sections/Hero";
+import { TrustBanner } from "@/components/sections/TrustBanner";
+import { About } from "@/components/sections/About";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { ServicesFeatured } from "@/components/sections/ServicesFeatured";
+import { TreatmentProcess } from "@/components/sections/TreatmentProcess";
+import { DoctorsFeatured } from "@/components/sections/DoctorsFeatured";
+import { Stats } from "@/components/sections/Stats";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { GalleryPreview } from "@/components/sections/GalleryPreview";
+import { FAQ } from "@/components/sections/FAQ";
+import { CTA } from "@/components/sections/CTA";
+import { ContactPreview } from "@/components/sections/ContactPreview";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Proactive — Premium Physiotherapy & Rehabilitation Clinic" },
+      { name: "description", content: "Luxury physiotherapy and rehabilitation clinic delivering senior-led, one-on-one care for sports, orthopedic, neurological and post-surgical recovery." },
+      { property: "og:title", content: "Proactive — Premium Physiotherapy & Rehabilitation" },
+      { property: "og:description", content: "Senior-led, evidence-based physiotherapy for lasting recovery." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SiteLayout>
+      <Hero />
+      <TrustBanner />
+      <About />
+      <WhyChooseUs />
+      <ServicesFeatured />
+      <TreatmentProcess />
+      <DoctorsFeatured />
+      <Stats />
+      <Testimonials />
+      <GalleryPreview />
+      <FAQ limit={6} />
+      <CTA />
+      <ContactPreview />
+    </SiteLayout>
   );
 }
