@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Proactive — Premium Physiotherapy & Rehabilitation Clinic" },
+      { name: "description", content: "Luxury physiotherapy and rehabilitation clinic delivering senior-led, one-on-one care for sports, orthopedic, neurological and post-surgical recovery." },
+      { name: "author", content: "Proactive" },
+      { property: "og:title", content: "Proactive — Premium Physiotherapy & Rehabilitation" },
+      { property: "og:description", content: "Senior-led, evidence-based physiotherapy for lasting recovery." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
