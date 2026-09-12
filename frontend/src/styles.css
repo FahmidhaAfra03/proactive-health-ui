@@ -1,0 +1,230 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+@import "@fontsource/playfair-display/latin-400.css";
+@import "@fontsource/playfair-display/latin-600.css";
+@import "@fontsource/playfair-display/latin-700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+  --color-blue-brand: var(--blue-brand);
+  --color-blue-light: var(--blue-light);
+  --color-navy-deep: var(--navy-deep);
+  --color-soft-grey: var(--soft-grey);
+
+  --shadow-luxe: 0 30px 80px -30px color-mix(in oklab, var(--navy-deep) 45%, transparent);
+  --shadow-gold: 0 20px 60px -20px color-mix(in oklab, var(--gold) 55%, transparent);
+  --shadow-blue: 0 20px 60px -20px color-mix(in oklab, var(--blue-brand) 45%, transparent);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --ink: oklch(0.15 0.04 250);            /* Deep Navy Dark Text / Background #0F172A */
+  --ink-soft: oklch(0.25 0.04 250);       /* Muted Navy */
+  --navy-deep: oklch(0.11 0.03 245);      /* Extra Deep Navy */
+  --blue-brand: oklch(0.48 0.19 250);     /* Professional Blue #1A56DB */
+  --blue-light: oklch(0.94 0.02 245);     /* Very Light Blue-Grey */
+  --soft-grey: oklch(0.97 0.005 250);     /* Soft Grey #F3F4F6 */
+  --gold: oklch(0.78 0.13 85);            /* #D4AF37 Gold Accent */
+  --gold-soft: oklch(0.88 0.09 88);
+  --gold-deep: oklch(0.62 0.13 80);
+  --cream: oklch(0.985 0.008 90);
+
+  --background: oklch(1 0 0);             /* Pure White */
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--blue-brand);           /* Professional Blue */
+  --primary-foreground: oklch(0.99 0 0);  /* White text */
+  --secondary: var(--soft-grey);
+  --secondary-foreground: var(--ink);
+  --muted: var(--soft-grey);
+  --muted-foreground: oklch(0.45 0.04 250);
+  --accent: var(--gold);                  /* Gold remains as accent */
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.94 0.01 250);
+  --ring: var(--blue-brand);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.015em; }
+
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--muted); }
+  ::-webkit-scrollbar-thumb { background: color-mix(in oklab, var(--ink) 30%, transparent); border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+}
+
+@utility container-lux {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  max-width: 80rem;
+  @media (min-width: 768px) { padding-inline: 2rem; }
+}
+
+@utility text-balance { text-wrap: balance; }
+
+@utility gold-gradient-text {
+  background: linear-gradient(135deg, #E7C766 0%, #D4AF37 45%, #A8842B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility blue-gradient-text {
+  background: linear-gradient(135deg, #60A5FA 0%, #2563EB 45%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility btn-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.9rem 1.6rem; border-radius: 999px;
+  background: linear-gradient(135deg, #E7C766, #D4AF37 60%, #B08A24);
+  color: #111; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--gold) 65%, transparent);
+  transition: transform 250ms ease, box-shadow 250ms ease, filter 250ms ease;
+}
+@utility btn-gold-hover {
+  &:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 18px 40px -12px color-mix(in oklab, var(--gold) 70%, transparent); }
+}
+
+@utility btn-blue {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.9rem 1.6rem; border-radius: 999px;
+  background: linear-gradient(135deg, #60A5FA, #2563EB 60%, #1D4ED8);
+  color: #ffffff; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--blue-brand) 45%, transparent);
+  transition: transform 250ms ease, box-shadow 250ms ease, filter 250ms ease;
+}
+@utility btn-blue-hover {
+  &:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 18px 40px -12px color-mix(in oklab, var(--blue-brand) 55%, transparent); }
+}
+
+@utility btn-ghost-dark {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.85rem 1.55rem; border-radius: 999px;
+  border: 1px solid color-mix(in oklab, currentColor 25%, transparent);
+  transition: all 250ms ease;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(3deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 55%, transparent); }
+  100% { box-shadow: 0 0 0 22px transparent; }
+}
+
+@utility animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+@utility animate-fade-up { animation: fade-up 0.7s ease-out both; }
+@utility animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+
+@utility grain-bg {
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in oklab, var(--gold) 14%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, color-mix(in oklab, var(--gold) 8%, transparent), transparent 55%);
+}
+
+@utility divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Lenis Smooth Scroll Integration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+

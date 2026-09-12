@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/about</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/treatments</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/doctors</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/gallery</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/faq</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/contact</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/book-appointment</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/privacy</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/terms</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/pain-management</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/sports-rehabilitation</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/orthopedic-rehabilitation</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/neurological-rehabilitation</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/manual-therapy</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/exercise-therapy</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/electrotherapy</loc><changefreq>weekly</changefreq></url>
+  <url><loc>/services/post-surgical-rehabilitation</loc><changefreq>weekly</changefreq></url>
+</urlset>
